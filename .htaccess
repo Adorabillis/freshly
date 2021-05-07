@@ -1,0 +1,10 @@
+# activation de la réécriture d'urls
+Options +FollowSymlinks
+RewriteEngine on
+
+
+# un commentaire
+RewriteRule ^admin$  index.php?page=admin [L]
+RewriteRule ^dashboard$  index.php?page=tableauDeBord [L]
+RewriteRule ^accueil$  index.php [L]
+RewriteRule ^jeu/([0-9]+)$  index.php?page=jeu&idJeu=$1 [L]

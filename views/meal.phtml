@@ -1,0 +1,31 @@
+<main>
+	
+	<h3>Gestion des plats</h3>
+    
+	<form method="post"> <!--action="article.phtml-->
+	    <p>
+		    <label for='category'>Catégorie</label>
+			<select name="category" id="category">
+			    <option value="">--Please choose an option--</option>
+			    <!--<?php foreach($categories as $categorie): ?>
+                <option value="<?= $categorie['id_categorie'] ?>"><?= htmlspecialchars($categorie['nom_categorie']) ?></option>
+                <?php endforeach; ?>-->
+            </select>
+            </p>
+		<p>
+		    <label for='name'>Nom du plat</label>
+		    <input type="text" name="name" id="name"/>
+		</p>
+		<p>
+			<label for="img">Image</label>
+			<input type="text" name="img" id="img"/>
+		</p>
+		<p>	
+			<label for="alt">Alt</label>
+			<input type="text" name="alt" id="alt"/>
+		</p>
+
+			<button type="submit">Enregistrer</button>
+	</form>
+	
+</main>
