@@ -3,6 +3,7 @@
 namespace Controllers;
 
 class TableauDeBordController {
+	
 
 	public function display()
 	{
@@ -18,5 +19,5 @@ class TableauDeBordController {
             include 'views/layout_front.phtml';
 	}
 
-}
-}
+}}
+

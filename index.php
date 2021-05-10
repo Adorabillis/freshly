@@ -18,6 +18,8 @@ spl_autoload_register(function($controller){
 //include "controllers/AccueilController.php";
 
 include 'models/Database.php';
+include 'models/Category.php';
+
 
 //si je n'ai pas un paramètre page
 if(!isset($_GET['page']))
@@ -44,6 +46,22 @@ else
 			//include 'controllers/TableauDeBordController.php';
 			$controller = new Controllers\TableauDeBordController();
 			$controller -> display();
+			break;
+		case 'category':
+			$controller = new Controllers\CategoryController();
+			$controller -> display();
+			break;
+		case 'createCategory':
+			$controller = new Controllers\AddCategoryController();
+			$controller -> display();
+			break;
+		case 'modifCategory':
+			$controller = new Controllers\ModifyCategoryController();
+			$controller -> display();
+			break;
+		case 'deleteCategory':
+			$controller = new Controllers\CategoryController();
+			$controller -> delete();
 			break;
 		case 'meal':
 			$controller = new Controllers\MealController();
