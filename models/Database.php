@@ -11,7 +11,7 @@ abstract class Database
 	
 	public function __construct()
 	{
-		$this -> bdd = new \PDO('mysql:host=db.3wa.io;dbname=anaiscap_freshly;charset=utf8','anaiscap','6f1143afb9e61c5b9f1fb592a63c1bc2');
+		$this -> bdd = new \PDO('mysql:host=db.3wa.io;dbname=corentinlebescond_freshly;charset=utf8','corentinlebescond','b7f6c07fff22f15daabcfc0380c9645a');
 	}
 	
 	public function findAll(string $req,array $params = []):array
