@@ -4,22 +4,12 @@ session_start();
 
 //autoloader
 
-spl_autoload_register(function($controller){
-    $controller = str_replace('\\', '/', $controller);
-    $controller = str_replace('Controllers', 'controllers', $controller);
-    include $controller.'.php';
-});
-
-//spl_autoload_register(function($class){
-//	include "controllers/$class.php";
+//autoloader
+spl_autoload_register(function($class){
 	
-//});
-
-//include "controllers/AccueilController.php";
-
-include 'models/Database.php';
-include 'models/Category.php';
-
+	include str_replace('\\','/',lcfirst($class)).".php";
+	
+});
 
 //si je n'ai pas un paramètre page
 if(!isset($_GET['page']))
@@ -62,6 +52,10 @@ else
 		case 'deleteCategory':
 			$controller = new Controllers\CategoryController();
 			$controller -> delete();
+			break;
+		case 'menu':
+			$controller = new Controllers\MenuController();
+			$controller -> display();
 			break;
 		case 'meal':
 			$controller = new Controllers\MealController();

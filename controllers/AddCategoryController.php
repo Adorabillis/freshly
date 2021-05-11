@@ -4,8 +4,13 @@ namespace Controllers;
 
 class AddCategoryController {
     
-    public function __construct()
+   	
+	use SessionController;
+	
+	public function __construct()
 	{
+		$this -> redirectIfNotAdmin();
+		
 		//si le formulaire a été soumis
 		if(!empty($_POST))
 		{

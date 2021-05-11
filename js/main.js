@@ -20,13 +20,6 @@ function deleted(){
         });
         
     }
-        
-        
-        
-        
-        
-    
-   
     
 }
 

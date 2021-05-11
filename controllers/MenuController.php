@@ -2,9 +2,10 @@
 
 namespace Controllers;
 
-class AccueilController
+class MenuController
 {
-	use SessionController;
+	
+		use SessionController;
 	
 		public function __construct()
 	{
@@ -16,10 +17,8 @@ class AccueilController
 		
 		//appeler la vue 
 		
-		$template = "views/accueil.phtml";
+		$template = "views/menus.phtml";
 		include 'views/layout_front.phtml';
-
-
 
 	}
 }
