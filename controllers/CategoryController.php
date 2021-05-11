@@ -3,6 +3,13 @@
 namespace Controllers;
 
 class CategoryController {
+	
+	use SessionController;
+	
+		public function __construct()
+	{
+		$this -> redirectIfNotAdmin();
+	}
 
  	public function display()
 	{

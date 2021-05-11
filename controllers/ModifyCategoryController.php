@@ -4,15 +4,19 @@ namespace Controllers;
 
 class ModifyCategoryController {
     
-    public function __construct()
+   	
+	use SessionController;
+
+	public function __construct()
 	{
+		$this -> redirectIfNotAdmin();
+		
 		//si le formulaire a été soumis
 		if(!empty($_POST))
 		{
 			$this -> submit();
 		}
 	}
-
  	public function display()
 	{
 	    $model = new \Models\Category();
