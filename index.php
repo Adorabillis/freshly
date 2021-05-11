@@ -26,6 +26,14 @@ else
 			$controller = new Controllers\AccueilController();
 			$controller -> display();
 			break;
+		case 'about':
+			$controller = new Controllers\AboutController();
+			$controller -> display();
+			break;
+		case 'contact':
+			$controller = new Controllers\ContactController();
+			$controller -> display();
+			break;
 		case 'admin':
 			//include 'controllers/AdminController.php';
 			$controller = new Controllers\AdminController();
