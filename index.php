@@ -52,9 +52,26 @@ else
 			$controller = new Controllers\CategoryController();
 			$controller -> delete();
 			break;
+			
 		case 'menu':
 			$controller = new Controllers\MenuController();
 			$controller -> display();
+			break;
+		case 'gestionMenu':
+			$controller = new Controllers\GestionMenuController();
+			$controller -> display();
+			break;
+		case 'createMenu':
+			$controller = new Controllers\AddMenuController();
+			$controller -> display();
+			break;
+		case 'modifyMenu':
+			$controller = new Controllers\ModifyMenuController();
+			$controller -> display();
+			break;
+		case 'deleteMenu':
+			$controller = new Controllers\GestionMenuController();
+			$controller -> delete();
 			break;
 		case 'meal':
 			$controller = new Controllers\MealController();

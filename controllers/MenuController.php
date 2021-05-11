@@ -5,6 +5,7 @@ namespace Controllers;
 class MenuController
 {
 	
+	
 	public function display()
 	{
 		
