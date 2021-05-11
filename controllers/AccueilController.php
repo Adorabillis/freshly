@@ -4,16 +4,12 @@ namespace Controllers;
 
 class AccueilController
 {
-	use SessionController;
-	
-		public function __construct()
-	{
-		$this -> redirectIfNotAdmin();
-	}
-	
+
 	public function display()
 	{
-		
+		$model = new \Models\ModifyAccueil();
+	    $config = $model -> findAllAccueil();
+	  
 		//appeler la vue 
 		
 		$template = "views/accueil.phtml";

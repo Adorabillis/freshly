@@ -3,8 +3,6 @@
 namespace Models;
 //classe mère de tous les models
 
-
-
 abstract class Database
 {
 	protected $bdd;

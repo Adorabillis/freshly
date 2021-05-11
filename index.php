@@ -30,7 +30,6 @@ else
 			//include 'controllers/AdminController.php';
 			$controller = new Controllers\AdminController();
 			$controller -> display();
-			
 			break;
 		case 'tableauDeBord':
 			//include 'controllers/TableauDeBordController.php';
@@ -61,6 +60,10 @@ else
 			$controller = new Controllers\MealController();
 			$controller -> display();
 			break;
+		case 'modifyAccueil':
+			$controller = new Controllers\ModifyAccueilController();
+			$controller -> display();
+			break;	
 	}
 
 }
