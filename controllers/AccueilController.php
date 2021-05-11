@@ -4,13 +4,6 @@ namespace Controllers;
 
 class AccueilController
 {
-	use SessionController;
-	
-		public function __construct()
-	{
-		$this -> redirectIfNotAdmin();
-	}
-	
 	public function display()
 	{
 		

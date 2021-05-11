@@ -11,7 +11,7 @@ function deleted(){
         //récupére l'id de l'element qu'on veut supprimer
        let id = this.dataset.id;
        //envoie une requête ajax fetch -->index.php en lui disant qu'on veut supprimer une categorie et celle qui a l'id 
-        fetch(`index.php?page=deleteCategory&id=${id}`)
+        fetch(this.dataset.url)
         //.then --> supprimer le tr concerné
         .then(response=>response.text())
         .then(response=>{

@@ -5,12 +5,6 @@ namespace Controllers;
 class MenuController
 {
 	
-		use SessionController;
-	
-		public function __construct()
-	{
-		$this -> redirectIfNotAdmin();
-	}
 	
 	public function display()
 	{
