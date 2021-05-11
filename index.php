@@ -61,6 +61,18 @@ else
 			$controller = new Controllers\MealController();
 			$controller -> display();
 			break;
+			case 'createMeal':
+			$controller = new Controllers\AddMealController();
+			$controller -> display();
+			break;
+		case 'modifyMeal':
+			$controller = new Controllers\ModifyMealController();
+			$controller -> display();
+			break;
+		case 'deleteMeal':
+			$controller = new Controllers\MealController();
+			$controller -> delete();
+			break;
 	}
 
 }

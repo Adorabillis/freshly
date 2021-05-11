@@ -20,7 +20,7 @@
                 <td><?= $category['is_dish'] ?></td>
                 <td><?= $category['description'] ?></td>
                 <td><button><a href="index.php?page=modifCategory&id=<?=$category['id']?>"><i class="fas fa-pen-nib"></i></a></a></button></td>
-                <td><button class="confirmButton" data-id="<?= $category['id'] ?>"><a><i class="fas fa-trash-alt"></i></a></button></td>
+                <td><button class="confirmButton" data-url="<?= "index.php?page=deleteCategory&id=".$category['id'] ?>"><a><i class="fas fa-trash-alt"></i></a></button></td>
             </tr>
             <?php endforeach; ?>
         </table>
