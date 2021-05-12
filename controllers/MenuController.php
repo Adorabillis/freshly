@@ -11,7 +11,7 @@ class MenuController
 		
 		//appeler la vue 
 		
-		$template = "views/menus.phtml";
+		$template = "views/menu.phtml";
 		include 'views/layout_front.phtml';
 
 	}
