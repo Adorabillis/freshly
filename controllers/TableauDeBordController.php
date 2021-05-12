@@ -2,21 +2,21 @@
 
 namespace Controllers;
 
-class TableauDeBordController {
-
-	public function display()
+class TableauDeBordController 
+{
+	
+	use SessionController;
+	
+		public function __construct()
 	{
-		if(!isset($_SESSION['admin']))
-	{
-		    header('location:index.php?page=admin');
-			exit;
+		$this -> redirectIfNotAdmin();
 	}
-	else 
+	
+	public function display()
 	{
 		//afficher le formulaire de connexion
             $template = 'views/tableauDeBord.phtml';
             include 'views/layout_front.phtml';
 	}
 
-}
 }
