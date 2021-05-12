@@ -115,7 +115,22 @@ else
 			$controller = new Controllers\MealController();
 			$controller -> delete();
 			break;
-
+		case 'slider':
+			$controller = new Controllers\SliderController();
+			$controller -> display();
+			break;
+		case 'createSlider':
+			$controller = new Controllers\AddSliderController();
+			$controller -> display();
+			break;
+		case 'modifySlider':
+			$controller = new Controllers\ModifySliderController();
+			$controller -> display();
+			break;
+		case 'deleteSlider':
+			$controller = new Controllers\SliderController();
+			$controller -> deleteImage();
+			break;
 	}
 
 }

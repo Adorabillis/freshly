@@ -14,7 +14,8 @@ class AccueilController
 		$meals = $model1 -> getAllMeals();
 	  
 		//appeler la vue 
-		
+		$model = new \Models\Slider();
+		$sliders = $model -> getAllSlider();
 		$template = "views/accueil.phtml";
 		include 'views/layout_front.phtml';
 
