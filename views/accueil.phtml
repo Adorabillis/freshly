@@ -22,11 +22,11 @@
 					</figcaption>
 				</figure>
 				<ul>
-					<li><i class="fas fa-star"></i>Lorem ipsum dolor sit.</li>
-					<li><i class="fas fa-star"></i>Dolorem est fuga possimus.</li>
-					<li><i class="fas fa-star"></i>Iste aperiam facere reprerit.</li>
-					<li><i class="fas fa-star"></i>Amet consectur aperiam iusto.</li>
-					<li><i class="fas fa-star"></i>Ipsa autem accusam ducimus.</li>
+					<?php foreach($meals as $meal): ?>
+					<?php if($meal['categoryName']=="Meat"):?>
+					<li><i class="fas fa-star"></i><td><?= $meal['name'] ?> </td></li>
+					<?php endif; ?> 
+					 <?php endforeach; ?>
 				</ul>
 				<a href="menus.html" class="details"><img src="img/fork-knife.svg" alt="">See more</a>
 			</article>
@@ -40,11 +40,11 @@
 					</figcaption>
 				</figure>
 				<ul>
-					<li><i class="fas fa-star"></i>Lorem ipsum libero consectur.</li>
-					<li><i class="fas fa-star"></i>Quas aperiam pariatur.</li>
-					<li><i class="fas fa-star"></i>Minus dolorum obcaecati vero.</li>
-					<li><i class="fas fa-star"></i>Maxime nihil deleniti commodi.</li>
-					<li><i class="fas fa-star"></i>Soluta vitae odio nesciunt.</li>
+					<?php foreach($meals as $meal): ?>
+					<?php if($meal['categoryName']=="Fish"):?>
+					<li><i class="fas fa-star"></i><td><?= $meal['name'] ?> </td></li>
+					<?php endif; ?> 
+					 <?php endforeach; ?>
 				</ul>
 				<a href="menus.html" class="details"><img src="img/fork-knife.svg" alt="">See more</a>
 			</article>
@@ -58,11 +58,11 @@
 					</figcaption>
 				</figure>
 				<ul>
-					<li><i class="fas fa-star"></i>Lorem ipsum consectetur.</li>
-					<li><i class="fas fa-star"></i>Expedita pariatur voluptas.</li>
-					<li><i class="fas fa-star"></i>Incidunt perferendis delectus.</li>
-					<li><i class="fas fa-star"></i>Voluptabus deserut nostrum.</li>
-					<li><i class="fas fa-star"></i>Iste assuma laboriosam numq.</li>
+					<?php foreach($meals as $meal): ?>
+					<?php if($meal['categoryName']=="Vegan"):?>
+					<li><i class="fas fa-star"></i><td><?= $meal['name'] ?> </td></li>
+					<?php endif; ?> 
+					 <?php endforeach; ?>
 				</ul>
 				<a href="menus.html" class="details"><img src="img/fork-knife.svg" alt="">See more</a>
 			</article>

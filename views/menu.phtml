@@ -9,124 +9,74 @@
 		</div> <!-- end of .filter -->
 		<div class="choice">
 			<div class="mix fish">
+				<?php foreach($meals as $meal): ?>
+				<?php if($meal['categoryName']=="Fish"):?>
 				<figure>
-					<img src="img/menus/fish-01.jpg" alt="A plate with cooked mussels">
+					<img src="<?= $meal['src'] ?>" alt="<?= $meal['alt'] ?>">
 					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Grilled mussels</h3>
+						<h3><?= $meal['name'] ?></h3>
 					</figcaption>
 				</figure>
+				<?php endif; ?> 
+				<?php endforeach; ?>
 			</div>
 			<div class="mix vegan">
+				<?php foreach($meals as $meal): ?>
+				<?php if($meal['categoryName']=="Vegan"):?>
 				<figure>
-					<img src="img/menus/vegan-03.jpg" alt="A plate with various vegan food">
+					<img src="<?= $meal['src'] ?>" alt="<?= $meal['alt'] ?>">
 					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Mixed vegetables</h3>
+						<h3><?= $meal['name'] ?></h3>
 					</figcaption>
 				</figure>
+				<?php endif; ?> 
+				<?php endforeach; ?>
 			</div>
 			<div class="mix meat">
+				<?php foreach($meals as $meal): ?>
+				<?php if($meal['categoryName']=="Meat"):?>
 				<figure>
-					<img src="img/menus/meat-03.jpg" alt="A plate with two meat kebabs and rice">
+					<img src="<?= $meal['src'] ?>" alt="<?= $meal['alt'] ?>">
 					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Freshly kebabs</h3>
+						<h3><?= $meal['name'] ?></h3>
 					</figcaption>
 				</figure>
+				<?php endif; ?> 
+				<?php endforeach; ?>
 			</div>
-			<div class="mix fish">
-				<figure>
-					<img src="img/menus/fish-02.jpg" alt="A plate with shrimps and rice">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Cajun shrimp</h3>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="mix meat">
-				<figure>
-					<img src="img/menus/meat-01.jpg" alt="One big burger">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Freshly burger</h3>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="mix vegan">
-				<figure>
-					<img src="img/menus/vegan-02.jpg" alt="A plate with grilled eggplants">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Grilled eggplants</h3>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="mix meat">
-				<figure>
-					<img src="img/menus/meat-02.jpg" alt="A plate with meat cooked in tomato sauce and mushrooms">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Beef stew with pasta</h3>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="mix fish">
-				<figure>
-					<img src="img/menus/fish-03.jpg" alt="A plate with grilled salmon and vegetables">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Grilled salmon</h3>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="mix vegan">
-				<figure>
-					<img src="img/menus/vegan-01.jpg" alt="Colorfull vegetarian plate">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Vegetable Jambalaya</h3>
-					</figcaption>
-				</figure>
-			</div>
+			
+			
 		</div> <!-- end of .choice -->
 		<article>
 			<h2>Deserts</h2>
 			<p class="select">Here are the deserts you can choose to finish your meal (included in your menu).</p>
 			<div class="choice">
+				<?php foreach($meals as $meal): ?>
+				<?php if($meal['categoryName']=="Dessert"):?>
 				<figure>
-					<img src="img/menus/desert-01.jpg" alt="A plate with a tiramisu">
+					<img src="<?= $meal['src'] ?>" alt="<?= $meal['alt'] ?>">
 					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Tiramisu</h3>
+						<h3><?= $meal['name'] ?></h3>
 					</figcaption>
 				</figure>
-				<figure>
-					<img src="img/menus/desert-02.jpg" alt="Two plates with pancakes and chocolate sauce">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Freshly Pancakes</h3>
-					</figcaption>
-				</figure>
-				<figure>
-					<img src="img/menus/desert-03.jpg" alt="A cup with red berries and soft white cheese">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Red berries cup</h3>
-					</figcaption>
-				</figure>
+				<?php endif; ?> 
+				<?php endforeach; ?>
 			</div> <!-- end of .choice -->
 		</article>
 		<article>
 			<h2>Cocktails</h2>
 			<p class="select">Soft drinkgs are included, but if you want you can order one of our excellent cocktails (not included in the menu).</p>
 			<div class="choice">
+				<?php foreach($meals as $meal): ?>
+				<?php if($meal['categoryName']=="Cocktail"):?>
 				<figure>
-					<img src="img/menus/drink-01.jpg" alt="cocktail drink">
+					<img src="<?= $meal['src'] ?>" alt="<?= $meal['alt'] ?>">
 					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Winter Whiskey</h3>
+						<h3><?= $meal['name'] ?></h3>
 					</figcaption>
 				</figure>
-				<figure>
-					<img src="img/menus/drink-02.jpg" alt="Two cocktail drinks">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Paloma cocktail</h3>
-					</figcaption>
-				</figure>
-				<figure>
-					<img src="img/menus/drink-03.jpg" alt="cocktail drink">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3>Bellini cocktail</h3>
-					</figcaption>
-				</figure>
+				<?php endif; ?> 
+				<?php endforeach; ?>
 			</div> <!-- end of .choice -->
 		</article>
 	</main>

@@ -26,6 +26,10 @@ else
 			$controller = new Controllers\AccueilController();
 			$controller -> display();
 			break;
+		case 'modifyAccueil':
+			$controller = new Controllers\ModifyAccueilController();
+			$controller -> display();
+			break;	
 		case 'about':
 			$controller = new Controllers\AboutController();
 			$controller -> display();
@@ -85,17 +89,27 @@ else
 			$controller = new Controllers\MealController();
 			$controller -> display();
 			break;
-		case 'modifyAccueil':
-			$controller = new Controllers\ModifyAccueilController();
-			$controller -> display();
-			break;	
-			case 'createMeal':
-			$controller = new Controllers\AddMealController();
-			$controller -> display();
+		case 'createMeal':
+			$controller = new Controllers\MealController();
+			//si le formulaire a été soumis
+			if(!empty($_POST))
+			{
+				$controller -> AddSubmit();
+			}
+			else {
+				$controller -> displayAdd();	
+			}
 			break;
 		case 'modifyMeal':
-			$controller = new Controllers\ModifyMealController();
-			$controller -> display();
+			$controller = new Controllers\MealController();
+			//si le formulaire a été soumis
+			if(!empty($_POST))
+			{
+				$controller -> ModifySubmit();
+			}
+			else {
+				$controller -> displayModify();	
+			}
 			break;
 		case 'deleteMeal':
 			$controller = new Controllers\MealController();
