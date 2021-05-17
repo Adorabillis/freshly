@@ -46,12 +46,10 @@ class Meal extends Database
 	
 	public function CountMeal()
 	{
-		//requêtes sql qui permet de modifier les plats
-		return $this -> query(
-		"SELECT COUNT * AS nb  
-		FROM meal
-		");
+		//requêtes sql qui donne nb des plats
+		return $this -> findOne("SELECT COUNT(*) AS nb FROM meal ORDER BY id");
 	}
+	
 
 }
 
