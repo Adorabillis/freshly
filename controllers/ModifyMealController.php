@@ -39,6 +39,7 @@ class ModifyMealController {
 			$image = "img/{$_FILES['img']['name']}";
 			move_uploaded_file ($_FILES['img']['tmp_name'], $image );
 		}
+		
 		$alt = $_POST['alt'];
 		$id_category = $_POST['category'];
 		

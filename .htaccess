@@ -12,6 +12,4 @@ RewriteRule ^contact$  index.php?page=contact [L]
 RewriteRule ^dashboard$  index.php?page=tableauDeBord [L]
 RewriteRule ^accueil$  index.php [L]
 RewriteRule ^modifyAccueil$  index.php?page=modifyAccueil [L]
-
-
-RewriteRule ^jeu/([0-9]+)$  index.php?page=jeu&idJeu=$1 [L]
+RewriteRule ^slider$  index.php?page=slider [L]

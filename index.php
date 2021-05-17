@@ -26,6 +26,10 @@ else
 			$controller = new Controllers\AccueilController();
 			$controller -> display();
 			break;
+		case 'modifyAccueil':
+			$controller = new Controllers\ModifyAccueilController();
+			$controller -> display();
+			break;	
 		case 'about':
 			$controller = new Controllers\AboutController();
 			$controller -> display();
@@ -85,23 +89,48 @@ else
 			$controller = new Controllers\MealController();
 			$controller -> display();
 			break;
-		case 'modifyAccueil':
-			$controller = new Controllers\ModifyAccueilController();
-			$controller -> display();
-			break;	
-			case 'createMeal':
-			$controller = new Controllers\AddMealController();
-			$controller -> display();
+		case 'createMeal':
+			$controller = new Controllers\MealController();
+			//si le formulaire a été soumis
+			if(!empty($_POST))
+			{
+				$controller -> AddSubmit();
+			}
+			else {
+				$controller -> displayAdd();	
+			}
 			break;
 		case 'modifyMeal':
-			$controller = new Controllers\ModifyMealController();
-			$controller -> display();
+			$controller = new Controllers\MealController();
+			//si le formulaire a été soumis
+			if(!empty($_POST))
+			{
+				$controller -> ModifySubmit();
+			}
+			else {
+				$controller -> displayModify();	
+			}
 			break;
 		case 'deleteMeal':
 			$controller = new Controllers\MealController();
 			$controller -> delete();
 			break;
-
+		case 'slider':
+			$controller = new Controllers\SliderController();
+			$controller -> display();
+			break;
+		case 'createSlider':
+			$controller = new Controllers\AddSliderController();
+			$controller -> display();
+			break;
+		case 'modifySlider':
+			$controller = new Controllers\ModifySliderController();
+			$controller -> display();
+			break;
+		case 'deleteSlider':
+			$controller = new Controllers\SliderController();
+			$controller -> deleteImage();
+			break;
 	}
 
 }
