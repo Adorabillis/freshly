@@ -8,7 +8,7 @@ class Menu extends Database
 	public function getAllMenus():array
 	{
 	
-		return $this -> findAll("SELECT menu.id, title, src, alt, price, category.name AS categoryName FROM menu
+		return $this -> findAll("SELECT id_category, menu.id, title, src, alt, price, category.name AS categoryName FROM menu
 		INNER JOIN category ON category.id = menu.id_category ");
 				
 	}

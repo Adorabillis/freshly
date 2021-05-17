@@ -4,6 +4,7 @@
 			<div><img src="<?= $slider['src'] ?>" alt="<?= $slider['alt'] ?>"></div>
 			<?php endforeach; ?>
 		</div> <!-- end of .slider -->
+		
 		<section class="intro">
 			<h1>Welcome to Freshly Restaurant</h1>
 			<img src="img/location.jpg" alt="view of the main dining room" class="intro-img">
@@ -24,7 +25,7 @@
 				</figure>
 				<ul>
 					<?php foreach($meals as $meal): ?>
-					<?php if($meal['categoryName']=="Meat"):?>
+					<?php if($meal['id_category']== $menu['id_category']):?>
 					<li><i class="fas fa-star"></i><td><?= $meal['name'] ?> </td></li>
 					<?php endif; ?> 
 					 <?php endforeach; ?>
@@ -32,43 +33,7 @@
 				<a href="menus.html" class="details"><img src="img/fork-knife.svg" alt="">See more</a>
 			</article>
 			<?php endforeach; ?>
-			<article>
-				<h3>Fish menu</h3>
-				<figure>
-					<img src="img/fish-menu.jpg" alt="Plate with shrimps and rice">
-					<figcaption>19 $<br>
-						<span>soft drinks and desert included</span>
-						<span>+ taxes</span>
-					</figcaption>
-				</figure>
-				<ul>
-					<?php foreach($meals as $meal): ?>
-					<?php if($meal['categoryName']=="Fish"):?>
-					<li><i class="fas fa-star"></i><td><?= $meal['name'] ?> </td></li>
-					<?php endif; ?> 
-					 <?php endforeach; ?>
-				</ul>
-				<a href="menus.html" class="details"><img src="img/fork-knife.svg" alt="">See more</a>
-			</article>
-			<article>
-				<h3>Vegetarian menu</h3>
-				<figure>
-					<img src="img/vegetarian-menu.jpg" alt="colorfull vegetarian plate">
-					<figcaption>18 $<br>
-						<span>soft drinks and desert included</span>
-						<span>+ taxes</span>
-					</figcaption>
-				</figure>
-				<ul>
-					<?php foreach($meals as $meal): ?>
-					<?php if($meal['categoryName']=="Vegan"):?>
-					<li><i class="fas fa-star"></i><td><?= $meal['name'] ?> </td></li>
-					<?php endif; ?> 
-					 <?php endforeach; ?>
-				</ul>
-				<a href="menus.html" class="details"><img src="img/fork-knife.svg" alt="">See more</a>
-			</article>
-
+		
 			
 
 		</section>
