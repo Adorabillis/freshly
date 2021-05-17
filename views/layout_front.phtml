@@ -29,14 +29,23 @@
 					<li><a href="about">About</a></li>
 					<li><a href="menu">Menus</a></li>
 					<li><a href="contact">Contact</a></li>
-					<li>
+            		    <?php if(isset($_SESSION['user'])): ?>
+            		    <li><a href="booking">Réservation</a></li>
+            			<!--	<a href="connection">Dashboard</a> -->
+            				<li><a href="index.php?page=connexion&action=deco">Deconnexion</a></li>
+            				<p>Bonjour <?= $_SESSION['user'] ?></p>
+            				<?php else: ?>
+            				<li><a href="connexion">Connexion</a></li>
+            			<?php endif; ?>
+            				<li>
             		    <?php if(isset($_SESSION['admin'])): ?>
             				<a href="dashboard">Dashboard</a>
-            				<a href="index.php?page=admin&action=deco">Deconnexion</a>
+            				<a href="index.php?page=connexion&action=deco">Deconnexion</a>
             				<p>Bonjour <?= $_SESSION['admin'] ?></p>
             				<?php else: ?>
             				<!--<a href="index.php?page=admin">Admin</a>-->
             			<?php endif; ?>
+		            </li>
 		            </li>
 				</ul>
 			</nav>

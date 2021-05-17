@@ -9,7 +9,7 @@ class Meal extends Database
 	{
 	//requêtes sql qui permet d'afficher les plats
 		return $this -> findAll(
-		"SELECT id_category, meal.id, meal.name, src, alt, category.name AS categoryName FROM meal
+		"SELECT id_category, is_dish, meal.id, meal.name, src, alt, category.name AS categoryName FROM meal
 		INNER JOIN category ON category.id = meal.id_category
 		");
 	}

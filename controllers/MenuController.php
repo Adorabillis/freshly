@@ -11,6 +11,9 @@ class MenuController
 		
 
 		//appeler la vue 
+		$model = new \Models\Category();
+		$categories = $model -> getAllCategory();
+		
 		$model1 = new \Models\Meal();
 		$meals = $model1 -> getAllMeals();
 

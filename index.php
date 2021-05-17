@@ -64,7 +64,6 @@ else
 			$controller = new Controllers\CategoryController();
 			$controller -> delete();
 			break;
-			
 		case 'menu':
 			$controller = new Controllers\MenuController();
 			$controller -> display();
@@ -130,6 +129,21 @@ else
 		case 'deleteSlider':
 			$controller = new Controllers\SliderController();
 			$controller -> deleteImage();
+			break;
+		case 'connexion':
+			//include 'controllers/AdminController.php';
+			$controller = new Controllers\ConnexionController();
+			$controller -> display();
+			break;
+		case 'newUser':
+			//include 'controllers/AdminController.php';
+			$controller = new Controllers\NewUserController();
+			$controller -> display();
+			break;
+		case 'booking':
+			//include 'controllers/AdminController.php';
+			$controller = new Controllers\BookingController();
+			$controller -> display();
 			break;
 	}
 

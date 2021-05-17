@@ -11,4 +11,11 @@ Trait SessionController
 			header('location:accueil');
 		}
 	}
+	public function redirectIfNotUser()
+	{
+		if(!isset($_SESSION['user']))
+		{
+			header('location:accueil');
+		}
+	}
 }

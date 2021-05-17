@@ -1,0 +1,50 @@
+<main>
+    
+    <table>
+            <tr>
+                <th>Nombres de personnes</th>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Commentaire</th>
+                <th>Statut</th>
+            </tr>
+            
+            <?php foreach($bookings as $booking): ?>
+            <tr>
+                <td><?= $booking['number'] ?></td>
+                <td><?= $booking['date'] ?></td>
+                <td><?= $booking['hour'] ?></td>
+                <td><?= $booking['comment'] ?></td>
+                <td><?= $booking['statut'] ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </table> 
+    
+    
+	<form method="post">
+		<p>
+			<label for='firstName'>Prénom</label>
+		</p>
+		<p>
+			<label for='lastName'>Nom</label>
+		</p>
+		<p>
+			<label for='nb'>Nombre de personnes</label>
+			<input type="number" name="nb" id="nb">
+		</p>
+		<p>
+			<label for='time'>Heure</label>
+			<input type="time" name="time" id="time">
+		</p>
+		<p>
+			<label for='date'>Date</label>
+			<input type="date" name="date" id="date">
+		</p>
+		<p>
+			<label for='comment'>Commentaire</label>
+			<input type="textarea" name="comment" id="comment">
+		</p>
+		
+		<button>Réserver</button>
+	</form>
+</main>

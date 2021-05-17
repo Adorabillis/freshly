@@ -3,83 +3,58 @@
 		<p class="select">Choose your main course according to your menu!</p>
 		<div class="filter">
 			<button data-filter="all">All</button>
-<!--			faire une boucle
--->			<button data-filter=".meat">Meat</button>
-			<button data-filter=".vegan">Vegan</button>
-			<button data-filter=".fish">Fish</button>
-		</div> <!-- end of .filter -->
+<!--			faire une boucle-->	
+			<?php foreach($categories as $categorie): ?>
+			<?php if($categorie['is_dish']==true): ?>
+		<button data-filter=".<?= $categorie['name']?>"><?= $categorie['name'] ?></button>
+			<?php endif; ?>   
+			<?php endforeach; ?>
+		</div> <!-- end of .filter --> 
+		
 		<div class="choice">
-			<div class="mix fish">
-				<?php foreach($meals as $meal): ?>
-				<?php if($meal['categoryName']=="Fish"):?>
+		
+		<?php foreach($meals as $meal): ?>
+		<?php if($meal['is_dish']==true):?>
+			<div class="mix <?= $meal['categoryName'] ?>">
 				<figure>
 					<img src="<?= $meal['src'] ?>" alt="<?= $meal['alt'] ?>">
 					<figcaption><img src="img/fork-knife.svg" alt="">
 						<h3><?= $meal['name'] ?></h3>
 					</figcaption>
 				</figure>
-				<?php endif; ?> 
-				<?php endforeach; ?>
 			</div>
-			<div class="mix vegan">
-				<?php foreach($meals as $meal): ?>
-				<?php if($meal['categoryName']=="Vegan"):?>
-				<figure>
-					<img src="<?= $meal['src'] ?>" alt="<?= $meal['alt'] ?>">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3><?= $meal['name'] ?></h3>
-					</figcaption>
-				</figure>
-				<?php endif; ?> 
-				<?php endforeach; ?>
-			</div>
-			<div class="mix meat">
-				<?php foreach($meals as $meal): ?>
-				<?php if($meal['categoryName']=="Meat"):?>
-				<figure>
-					<img src="<?= $meal['src'] ?>" alt="<?= $meal['alt'] ?>">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3><?= $meal['name'] ?></h3>
-					</figcaption>
-				</figure>
-				<?php endif; ?> 
-				<?php endforeach; ?>
-			</div>
-			
-			
+			<?php endif; ?> 
+			<?php endforeach; ?>
 		</div> <!-- end of .choice -->
+		
+		
+		
+		<?php foreach($categories as $categorie): ?>
+			<?php if($categorie['is_dish']==false): ?>
+			
 		<article>
-			<h2>Deserts</h2>
-			<p class="select">Here are the deserts you can choose to finish your meal (included in your menu).</p>
+			<h2><?= $categorie['name'] ?></h2>
+			<p class="select"><?= $categorie['description'] ?></p>
+		
 			<div class="choice">
 				<?php foreach($meals as $meal): ?>
-				<?php if($meal['categoryName']=="Dessert"):?>
+				<?php if($meal['categoryName']==$categorie['name'] ):?>
 				<figure>
 					<img src="<?= $meal['src'] ?>" alt="<?= $meal['alt'] ?>">
 					<figcaption><img src="img/fork-knife.svg" alt="">
 						<h3><?= $meal['name'] ?></h3>
 					</figcaption>
 				</figure>
-				<?php endif; ?> 
+				<?php endif; ?>  
 				<?php endforeach; ?>
 			</div> <!-- end of .choice -->
+			
 		</article>
-		<article>
-			<h2>Cocktails</h2>
-			<p class="select">Soft drinkgs are included, but if you want you can order one of our excellent cocktails (not included in the menu).</p>
-			<div class="choice">
-				<?php foreach($meals as $meal): ?>
-				<?php if($meal['categoryName']=="Cocktail"):?>
-				<figure>
-					<img src="<?= $meal['src'] ?>" alt="<?= $meal['alt'] ?>">
-					<figcaption><img src="img/fork-knife.svg" alt="">
-						<h3><?= $meal['name'] ?></h3>
-					</figcaption>
-				</figure>
-				<?php endif; ?> 
-				<?php endforeach; ?>
-			</div> <!-- end of .choice -->
-		</article>
+		<?php endif; ?> 
+			<?php endforeach; ?>
+			
+	
+	 
 	</main>
 	
 	<!-- Charger la bibliothèque de base de jQuery -->
@@ -92,4 +67,4 @@
 	</script>
 </body>
 
-</html>
+</html> 
