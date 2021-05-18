@@ -1,4 +1,8 @@
 <?php
+
+//setcookie('user_id', '1234');
+//setcookie('user_pref', 'dark_theme', time()+3600*24*30, '/', '', true, true);
+
 //démarrer le système de session
 session_start();
 
@@ -144,6 +148,21 @@ else
 			//include 'controllers/AdminController.php';
 			$controller = new Controllers\BookingController();
 			$controller -> display();
+			break;
+		case 'resa':
+			//include 'controllers/AdminController.php';
+			$controller = new Controllers\BookingAdminController();
+			$controller -> display();
+			break;
+		case 'modifyUserBooking':
+			//include 'controllers/AdminController.php';
+			$controller = new Controllers\BookingController();
+			$controller -> showFormModif();
+			break;
+		case 'cookie':
+			//include 'controllers/AdminController.php';
+			$controller = new Controllers\CookieController();
+			$controller -> createCookie();
 			break;
 	}
 

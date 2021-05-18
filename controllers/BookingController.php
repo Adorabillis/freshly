@@ -12,7 +12,7 @@ class BookingController {
 		//si le formulaire a été soumis
 		if(!empty($_POST))
 		{
-		    $this -> AddBooking();
+		    $this -> addBooking();
 	    }
 	}
 
@@ -24,15 +24,25 @@ class BookingController {
             $template = 'views/booking.phtml';
             include 'views/layout_front.phtml';
 	}
-	public function AddBooking()
+	
+	public function addBooking()
 	{
-		//préparer les données pour les mettre dans la base de données
 		$number = $_POST['nb'];
-		$id_user = $_SESSION['idUser'];
 		$date = $_POST['date'];
 		$hour = $_POST['time'];
-		$statut = "En cours";
 		$comment = $_POST['comment'];
+		if( isset($_POST['modifier'])){
+			//récupérer l'id de la réservation 
+			$id = $_POST['id'];
+			$model = new \Models\Booking();
+			$model -> ModifyUserBooking($number, $date, $hour, $comment, $id);
+		}
+		else
+		{
+		//préparer les données pour les mettre dans la base de données
+	
+		$id_user = $_SESSION['idUser'];
+		$statut = "En cours";
 		
 		//mettre les datas en bdd
 		$model = new \Models\Booking();
@@ -40,7 +50,15 @@ class BookingController {
             
 		header('location:index.php?page=booking');
 			exit;
+		}
 	}
+	public function showFormModif()
+	{
+		$model = new \Models\Booking();
+	    $userBooking = $model -> FindBookingById($_GET['id']);
+	    include "views/modifyUserBooking.phtml";
+	}
+	
 	
 /*		public function delete()
 	{

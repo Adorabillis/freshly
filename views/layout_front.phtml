@@ -55,6 +55,16 @@
 		<!-- code principal de la page -->
 	<?php include $template ?>
 	
+	<?php if(!isset($_COOKIE['accept']))
+	'<div class="cookie"> 
+			<span>🍪 Ce site utilise des cookies et vous donne le contrôle sur ceux que vousouhaitez activer </span>   
+			<div>   
+				<button class="acceptCookie"> Tout accepter  </button>   
+				<button class="rejectCookie">Tout refuser </button>   
+			</div>   
+		</div>'
+		?>
+		
 		<footer>
 		<div class="container">
 			<div class="flex">
